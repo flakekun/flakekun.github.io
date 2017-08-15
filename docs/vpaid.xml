@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<VAST version="2.0">
+    <Ad id="7657063745109719">
+        <InLine>
+            <AdSystem>Videmob</AdSystem>
+            <AdTitle>
+                <![CDATA[Videmob VPAID]]>
+            </AdTitle>
+            <Impression></Impression>
+            <Creatives>
+                <Creative>
+                    <Linear>
+                        <Duration>00:00:30</Duration>
+                        <AdParameters>
+                            <![CDATA[{"adurl":"https://vastweb.videmob.com//vmvast.php?cats=&protocol=full&player_height=400&player_width=600&ua=Mozilla%2F5.0%20(Windows%20NT%2010.0%3B%20Win64%3B%20x64)%20AppleWebKit%2F537.36%20(KHTML,%20like%20Gecko)%20Chrome%2F56.0.2924.87%20Safari%2F537.36&ip=207.232.54.10&rnd=2042935701&siteurl=http%3A%2F%2Ftagtest.lkqd.com%2Ftag.html%3Ft%3Delgimf0%26apt%3Dauto&pui=172f07d3924aa10d29456ead239f21c0&custompubid=4&device_ip=207.232.54.10%22,%22pui%22:%22172f07d3924aa10d29456ead239f21c0"}]]>
+                        </AdParameters>
+                        <MediaFiles>
+                            <MediaFile delivery="progressive" width="350" height="250" type="application/javascript"
+                                       apiFramework="VPAID">
+                                <![CDATA[/ad.js]]>
+                            </MediaFile>
+                        </MediaFiles>
+                    </Linear>
+                </Creative>
+            </Creatives>
+        </InLine>
+    </Ad>
+</VAST>
+
