@@ -17,7 +17,7 @@
                         <MediaFiles>
                             <MediaFile delivery="progressive" width="350" height="250" type="application/javascript"
                                        apiFramework="VPAID">
-                                <![CDATA[/ad.js]]>
+                                <![CDATA[https://flakekun.github.io/docs/ad.js]]>
                             </MediaFile>
                         </MediaFiles>
                     </Linear>
