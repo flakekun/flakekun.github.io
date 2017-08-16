@@ -5,14 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-<img src="https://adserverjsonapi.dimsem.com/tools/mock_vasts/iframe.php?origin=img"/>
+<img src="https://adserverjsonapi.dimsem.com/tools/mock_vasts/iframe.php?caller=img"/>
 
 <script>
     runXHR();
     runIFrame();
 
     function runXHR() {
-        const url = 'https://adserverjsonapi.dimsem.com/tools/mock_vasts/iframe.php?origin=xhr';
+        const url = 'https://adserverjsonapi.dimsem.com/tools/mock_vasts/iframe.php?caller=xhr&origin' + location.origin;
 
         const xhr = new XMLHttpRequest();
         xhr.open('GET', url, true);
@@ -21,7 +21,7 @@
     }
 
     function runIFrame() {
-        const url = 'https://adserverjsonapi.dimsem.com/tools/mock_vasts/iframe.php?origin=iframe';
+        const url = 'https://adserverjsonapi.dimsem.com/tools/mock_vasts/iframe.php?caller=iframe&origin' + location.origin;
 
         const frame = document.createElement('iframe');
         frame.src = url;
