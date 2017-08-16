@@ -13,6 +13,7 @@
 
         const xhr = new XMLHttpRequest();
         xhr.open('GET', url, true);
+        xhr.withCredentials = true;
         xhr.send();
     </script>
 </body>
