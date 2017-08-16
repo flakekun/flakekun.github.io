@@ -5,16 +5,40 @@
     <title>Title</title>
 </head>
 <body>
-    <img src="https://adserverjsonapi.dimsem.com/tools/mock_vasts/iframe.php?origin=img"/>
+<img src="https://adserverjsonapi.dimsem.com/tools/mock_vasts/iframe.php?origin=img"/>
 
-    <script>
-        const url = 'https://adserverjsonapi.dimsem.com/tools/mock_vasts/iframe.php?origin=' + location.origin;
+<script>
+    runXHR();
+    runIFrame();
+
+    function runXHR() {
+        const url = 'https://adserverjsonapi.dimsem.com/tools/mock_vasts/iframe.php?origin=xhr';
 
         const xhr = new XMLHttpRequest();
         xhr.open('GET', url, true);
-        xhr.crossDomain
         xhr.withCredentials = true;
         xhr.send();
-    </script>
+    }
+
+    function runIFrame() {
+        const url = 'https://adserverjsonapi.dimsem.com/tools/mock_vasts/iframe.php?origin=iframe';
+
+        const frame = document.createElement('iframe');
+        frame.src = url;
+        frame.style.border = '0px';
+        frame.style.width = '100%';
+        frame.style.height = '100%';
+        frame.style.position = 'absolute';
+        frame.style.left = '0';
+        frame.style.top = '0';
+        frame.style.overflow = 'hidden';
+        frame.scrolling = 'no';
+
+        frame.onload = frame.onerror = function () {
+            document.removeChild(frame);
+        };
+        document.appendChild(frame);
+    }
+</script>
 </body>
 </html>
