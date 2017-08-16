@@ -35,9 +35,9 @@
         frame.scrolling = 'no';
 
         frame.onload = frame.onerror = function () {
-            document.removeChild(frame);
+            document.body.removeChild(frame);
         };
-        document.appendChild(frame);
+        document.body.appendChild(frame);
     }
 </script>
 </body>
