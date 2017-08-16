@@ -5,14 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-<!--
     <img src="https://adserverjsonapi.dimsem.com/tools/mock_vasts/iframe.php?origin=img"/>
--->
+
     <script>
         const url = 'https://adserverjsonapi.dimsem.com/tools/mock_vasts/iframe.php?origin=' + location.origin;
 
         const xhr = new XMLHttpRequest();
         xhr.open('GET', url, true);
+        xhr.crossDomain
         xhr.withCredentials = true;
         xhr.send();
     </script>
