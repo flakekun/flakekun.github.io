@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AlphaPlayer</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <video id="existing" muted style="width: 300px; height: 200px; background: #9e9c9c"></video>
+
+    <div>
+        <div id="holder" style="width: 400px; height: 300px; background: #9e9c9c; float: left; margin-right: 10px"></div>
+        <div id="inner_holder" style="width: 400px; height: 300px; background: #9e9c9c; float: left"></div>
+    </div>
+    <div id="log" style="width: 400px; height: 600px"></div>
+
+<script type="text/javascript">
+    const VIDEO_SOURCE = 'http://content.bitsontherun.com/videos/bcBQbQG6-Rulr1JTS.mp4';
+
+    const logEl = document.getElementById('log');
+
+    function playExistingVideoTag() {
+        const videoEl = document.getElementById('existing');
+        videoEl.defaultMuted = true;
+        videoEl.setAttribute('muted', '');
+        videoEl.src = VIDEO_SOURCE;
+        tryPlay(videoEl);
+    }
+
+    function playCreatedVideoTag(parent) {
+        const video = document.createElement('video');
+        video.id = 'created';
+        video.style.cssText = 'width:100%;height:100%;';
+        //video.setAttribute('preload', 'auto');
+        //video.setAttribute('muted', '');
+        parent.appendChild(video);
+
+        setTimeout(() => {
+            video.src = VIDEO_SOURCE;
+            tryPlay(video);
+        }, 1000);
+
+        video.addEventListener('canplay', () => {
+            log('canplay - ' + video.readyState);
+            setTimeout(() => {
+                tryPlay(video);
+            }, 1000);
+
+        });
+
+        video.addEventListener('click', () => {
+            log('click');
+            tryPlay(video);
+        });
+
+        video.addEventListener('loadeddata', () => {
+            log('loadeddata - ' + video.readyState);
+        });
+/*
+        video.play()
+            .then((result) => {
+                log('success - ' + result);
+            })
+            .catch((result) => {
+                log('error - ' + result);
+            });
+            */
+    }
+
+    function playInnerCreatedVideoTag(parent) {
+        parent.innerHTML = '<video muted></video>';
+
+        const videoEl = parent.children[0];
+        videoEl.id = 'inner_created';
+        videoEl.style.cssText = 'width:100%;height:100%;';
+
+        setTimeout(() => {
+            videoEl.src = VIDEO_SOURCE;
+            tryPlay(videoEl);
+        }, 1000);
+
+        setTimeout(() => {
+            videoEl.muted = false;
+            if (videoEl.paused) {
+                log(`paused (${videoEl.id})`);
+                videoEl.muted = true;
+                tryPlay(videoEl);
+            }
+        }, 2000);
+    }
+
+    function tryPlay(videoEl, doNotRetry) {
+        log(`readyState (${videoEl.id}) - ` + videoEl.readyState);
+
+        videoEl.play()
+            .then((result) => {
+                log(`success (${videoEl.id}) - ` + result);
+            })
+            .catch((result) => {
+                log(`error (${videoEl.id}) - ` + result);
+
+                if (!doNotRetry) {
+                    log(`trying muted (${videoEl.id})`);
+                    videoEl.volume = 0;
+                    videoEl.setAttribute('muted', '');
+                    videoEl.defaultMuted = true;
+                    setTimeout(() => tryPlay(videoEl, true), 500);
+                }
+            });
+    }
+
+    function log(text) {
+        const p = document.createElement('p');
+        p.innerText = text;
+        logEl.appendChild(p);
+    }
+
+    playExistingVideoTag();
+    playCreatedVideoTag(document.getElementById('holder'));
+    playInnerCreatedVideoTag(document.getElementById('inner_holder'));
+</script>
+</body>
+</html>
