@@ -20,8 +20,8 @@
 
     function playExistingVideoTag() {
         const videoEl = document.getElementById('existing');
-        videoEl.defaultMuted = true;
         videoEl.setAttribute('muted', '');
+        videoEl.muted = true;
         videoEl.src = VIDEO_SOURCE;
         tryPlay(videoEl);
     }
@@ -55,15 +55,6 @@
         video.addEventListener('loadeddata', () => {
             log('loadeddata - ' + video.readyState);
         });
-/*
-        video.play()
-            .then((result) => {
-                log('success - ' + result);
-            })
-            .catch((result) => {
-                log('error - ' + result);
-            });
-            */
     }
 
     function playInnerCreatedVideoTag(parent) {
@@ -102,7 +93,7 @@
                     log(`trying muted (${videoEl.id})`);
                     videoEl.volume = 0;
                     videoEl.setAttribute('muted', '');
-                    videoEl.defaultMuted = true;
+                    videoEl.muted = true;
                     setTimeout(() => tryPlay(videoEl, true), 500);
                 }
             });
