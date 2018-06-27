@@ -20,6 +20,7 @@
 
     function playExistingVideoTag() {
         const videoEl = document.getElementById('existing');
+        videoEl.setAttribute('preload', 'auto');
         videoEl.setAttribute('muted', '');
         videoEl.muted = true;
         videoEl.src = VIDEO_SOURCE;
@@ -30,6 +31,7 @@
         const videoEl = document.createElement('video');
         videoEl.id = 'created';
         videoEl.style.cssText = 'width:100%;height:100%;';
+        videoEl.setAttribute('preload', 'auto');
         videoEl.setAttribute('muted', '');
         videoEl.muted = true;
         parent.appendChild(videoEl);
@@ -63,6 +65,7 @@
         const videoEl = parent.children[0];
         videoEl.id = 'inner_created';
         videoEl.style.cssText = 'width:100%;height:100%;';
+        videoEl.setAttribute('preload', 'auto');
 
         setTimeout(() => {
             videoEl.src = VIDEO_SOURCE;
