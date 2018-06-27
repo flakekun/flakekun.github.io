@@ -27,33 +27,33 @@
     }
 
     function playCreatedVideoTag(parent) {
-        const video = document.createElement('video');
-        video.id = 'created';
-        video.style.cssText = 'width:100%;height:100%;';
-        //video.setAttribute('preload', 'auto');
-        //video.setAttribute('muted', '');
-        parent.appendChild(video);
+        const videoEl = document.createElement('video');
+        videoEl.id = 'created';
+        videoEl.style.cssText = 'width:100%;height:100%;';
+        videoEl.setAttribute('muted', '');
+        videoEl.muted = true;
+        parent.appendChild(videoEl);
 
         setTimeout(() => {
-            video.src = VIDEO_SOURCE;
-            tryPlay(video);
+            videoEl.src = VIDEO_SOURCE;
+            tryPlay(videoEl);
         }, 1000);
 
-        video.addEventListener('canplay', () => {
-            log('canplay - ' + video.readyState);
+        videoEl.addEventListener('canplay', () => {
+            log('canplay - ' + videoEl.readyState);
             setTimeout(() => {
-                tryPlay(video);
+                tryPlay(videoEl);
             }, 1000);
 
         });
 
-        video.addEventListener('click', () => {
+        videoEl.addEventListener('click', () => {
             log('click');
-            tryPlay(video);
+            tryPlay(videoEl);
         });
 
-        video.addEventListener('loadeddata', () => {
-            log('loadeddata - ' + video.readyState);
+        videoEl.addEventListener('loadeddata', () => {
+            log('loadeddata - ' + videoEl.readyState);
         });
     }
 
