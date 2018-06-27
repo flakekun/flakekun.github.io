@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WSDK-5</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .local {
+            flex: none;
+            margin: 5px;
+        }
+
+        .local div {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .local label {
+            display: inline-block;
+            flex: 0 0 100px;
+        }
+
+        .local input {
+            flex: 1;
+        }
+
+        #player_holder {
+            flex: 1 1 100px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="local">
+    <div>
+        <label for="local_env">alfa_env:</label>
+        <input type="text" id="local_env"/>
+    </div>
+
+    <div>
+        <label for="local_url">alfa_vast_url:</label>
+        <input type="text" id="local_url"/>
+    </div>
+</div>
+
+<div id="player_holder"></div>
+
+<script>
+    bindLocalVar(document.getElementById('local_env'), 'alfa_env');
+    bindLocalVar(document.getElementById('local_url'), 'alfa_vast_url');
+
+    function bindLocalVar(input, varName) {
+        input.value = localStorage.getItem(varName) || '';
+        input.addEventListener('input', function () {
+            localStorage.setItem(varName, input.value);
+        })
+    }
+</script>
+
+<script src="../webalfaplayer.debug.js"></script>
+<script>
+    const pui = '35vz1fd5a348b2bf6841a0a4b8g3e281';
+
+    const player = WebAlfaPlayer(pui);
+    player.create({
+        "parentId": "player_holder",
+        "autoplay": true,
+        "muted": true,
+        "gui": {
+            "noGui": false,
+            "muteSwitch": true
+        }
+    });
+</script>
+</body>
+</html>
