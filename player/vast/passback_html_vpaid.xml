@@ -16,13 +16,13 @@
                         </AdParameters>
                         <MediaFiles>
                             <MediaFile delivery="progressive" width="1920" height="775" type="application/javascript" apiFramework="VPAID">
-                                <![CDATA[https://websdk.cdn.videmob.com/vpaid/ad.js?passback_html=https%3A%2F%2Fwebsdk.cdn.videmob.com%2Fplayer%2Fvidemobpassback2.html]]>
+                                <![CDATA[https://flakekun.github.io/player/ad.js?passback_html=https%3A%2F%2Fwebsdk.cdn.videmob.com%2Fplayer%2Fvidemobpassback2.html]]>
                             </MediaFile>
                             <MediaFile delivery="progressive" width="1920" height="775" type="application/x-javascript" apiFramework="VPAID">
-                                <![CDATA[https://websdk.cdn.videmob.com/vpaid/ad.js?passback_html=https%3A%2F%2Fwebsdk.cdn.videmob.com%2Fplayer%2Fvidemobpassback2.html]]>
+                                <![CDATA[https://flakekun.github.io/player/ad.js?passback_html=https%3A%2F%2Fwebsdk.cdn.videmob.com%2Fplayer%2Fvidemobpassback2.html]]>
                             </MediaFile>
                             <MediaFile delivery="progressive" width="1920" height="775" type="text/javascript" apiFramework="VPAID">
-                                <![CDATA[https://websdk.cdn.videmob.com/vpaid/ad.js?passback_html=https%3A%2F%2Fwebsdk.cdn.videmob.com%2Fplayer%2Fvidemobpassback2.html]]>
+                                <![CDATA[https://flakekun.github.io/player/ad.js?passback_html=https%3A%2F%2Fwebsdk.cdn.videmob.com%2Fplayer%2Fvidemobpassback2.html]]>
                             </MediaFile>
                         </MediaFiles>
                     </Linear>
