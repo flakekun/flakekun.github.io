@@ -12,7 +12,7 @@
                     <Linear>
                         <Duration>00:00:30</Duration>
                         <AdParameters>
-                            <![CDATA[{"adurl":"", "passback_html": "https%3A%2F%2Fwebsdk.cdn.videmob.com%2Fplayer%2Fvidemobpassback2.html"}]]>
+                            <![CDATA[{"adurl":"", "passback_html": "https://websdk.cdn.videmob.com/player/videmobpassback2.html"}]]>
                         </AdParameters>
                         <MediaFiles>
                             <MediaFile delivery="progressive" width="1920" height="775" type="application/javascript" apiFramework="VPAID">
