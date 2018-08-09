@@ -16,13 +16,13 @@
                         </AdParameters>
                         <MediaFiles>
                             <MediaFile delivery="progressive" width="1920" height="775" type="application/javascript" apiFramework="VPAID">
-                                <![CDATA[https://flakekun.github.io/player/ad.js]]>
+                                <![CDATA[http://localhost:3000/scripts/ad.js]]>
                             </MediaFile>
                             <MediaFile delivery="progressive" width="1920" height="775" type="application/x-javascript" apiFramework="VPAID">
-                                <![CDATA[https://flakekun.github.io/player/ad.js]]>
+                                <![CDATA[http://localhost:3000/scripts/ad.js]]>
                             </MediaFile>
                             <MediaFile delivery="progressive" width="1920" height="775" type="text/javascript" apiFramework="VPAID">
-                                <![CDATA[https://flakekun.github.io/player/ad.js]]>
+                                <![CDATA[http://localhost:3000/scripts/ad.js]]>
                             </MediaFile>
                         </MediaFiles>
                     </Linear>
