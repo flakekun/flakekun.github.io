@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Circles</title>
+</head>
+    <script src="./assets/react.production.min.js"></script>
+    <script src="./assets/react-dom.production.min.js"></script>
+    <script src="./assets/babel.min.js"></script>
+
+    <script src="./components/App.js" type="text/babel"></script>
+    <script src="./components/Form.js" type="text/babel"></script>
+    <script src="./components/Result.js" type="text/babel"></script>
+    <script src="./components/Score.js" type="text/babel"></script>
+    <script src="./index.js" type="text/babel"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+    <style>
+        .form {
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+        }
+
+        .form label {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .result {
+            display: flex;
+            flex-direction: column;
+            width: 450px;
+            height: 300px;
+            margin: 64px;
+            justify-content: center;
+            align-items: center;
+            background: #ff9cea;
+            color: white;
+        }
+
+        .result-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 270px;
+        }
+
+        .result-line + .result-line {
+            margin-top: 4px;
+        }
+
+        .result-line span {
+            font-family: 'Roboto Slab', sans-serif;
+            font-size: 18px;
+        }
+
+        .result-score {
+            display: flex;
+            width: 150px;
+        }
+
+        .result-score svg {
+            height: 16px;
+            margin-right: 2px;
+        }
+
+        .circle-full {
+            display: block;
+            width: 16px;
+            height: 16px;
+            background: black;
+        }
+
+        .circle-half {
+            display: block;
+            width: 16px;
+            height: 16px;
+            background: gray;
+        }
+    </style>
+<body>
+    <div id="app"/>
+</body>
+</html>
