@@ -4,6 +4,7 @@ const INITIAL_DATA = [
   { id: 3, label: 'Зерновые', value: 5 },
   { id: 4, label: 'Белковые', value: 4.5 },
   { id: 5, label: 'Молочные', value: 3 },
+  { id: 6, label: 'Жиры', value: 1 },
 ];
 
 window.App = () => {
@@ -18,7 +19,7 @@ window.App = () => {
 
         return {
           ...item,
-          value: parseFloat(value) || 0,
+          value,
         };
       });
     });

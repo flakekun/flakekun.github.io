@@ -26,7 +26,7 @@ window.Score = ({ value }) => {
   return React.useMemo(() => {
     const result = [];
 
-    let counter = value;
+    let counter = parseFloat(value) || 0;
     while (counter > 0) {
       if (counter >= 1) {
         result.push(<CircleFull />);
