@@ -8,15 +8,21 @@
     <script src="./assets/react-dom.production.min.js"></script>
     <script src="./assets/babel.min.js"></script>
 
-    <script src="./components/App.js?cache=1" type="text/babel"></script>
-    <script src="./components/Form.js?cache=1" type="text/babel"></script>
-    <script src="./components/Result.js?cache=1" type="text/babel"></script>
-    <script src="./components/Score.js?cache=1" type="text/babel"></script>
-    <script src="./index.js?cache=1" type="text/babel"></script>
+    <script src="./components/App.js?cache=2" type="text/babel"></script>
+    <script src="./components/Form.js?cache=2" type="text/babel"></script>
+    <script src="./components/Result.js?cache=2" type="text/babel"></script>
+    <script src="./components/Score.js?cache=2" type="text/babel"></script>
+    <script src="./index.js?cache=2" type="text/babel"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
 
     <style>
+        .app {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .form {
             display: flex;
             flex-direction: column;
@@ -36,8 +42,8 @@
             margin: 64px;
             justify-content: center;
             align-items: center;
-            background: #ff9cea;
-            color: white;
+            border: 1px solid black;
+            color: black;
         }
 
         .result-line {
@@ -48,12 +54,12 @@
         }
 
         .result-line + .result-line {
-            margin-top: 4px;
+            margin-top: 8px;
         }
 
         .result-line span {
             font-family: 'Roboto Slab', sans-serif;
-            font-size: 18px;
+            font-size: 16px;
         }
 
         .result-score {
@@ -62,22 +68,8 @@
         }
 
         .result-score svg {
-            height: 16px;
+            height: 24px;
             margin-right: 2px;
-        }
-
-        .circle-full {
-            display: block;
-            width: 16px;
-            height: 16px;
-            background: black;
-        }
-
-        .circle-half {
-            display: block;
-            width: 16px;
-            height: 16px;
-            background: gray;
         }
     </style>
 <body>
