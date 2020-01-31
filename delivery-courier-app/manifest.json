@@ -3,17 +3,17 @@
   "name": "Restfront Delivery Courier",
   "icons": [
     {
-      "src": "/icon-64.png",
+      "src": "icon-64.png",
       "type": "image/png",
       "sizes": "64x64"
     },
     {
-      "src": "/icon-192.png",
+      "src": "icon-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/icon-512.png",
+      "src": "icon-512.png",
       "type": "image/png",
       "sizes": "512x512"
     },
